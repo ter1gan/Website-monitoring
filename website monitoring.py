@@ -25,10 +25,7 @@ def https(**args):
             
 #Интервал отправки
 def dispatcher(loop, pool, crontab):
-             
-    time_seconds = time.time()
-    delay_seconds = (((time_seconds//60)+ 1)  - time_seconds // 60) * 60
-    loop.call_later(delay_seconds, dispatcher, loop, pool, crontab)
+    loop.call_later(60, dispatcher, loop, pool, crontab)
     s = 0
     while True:
         time.sleep(1)
