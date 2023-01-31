@@ -12,7 +12,7 @@ def https(**args):
     msg = MIMEMultipart()
     msg['From'] = 'TeSt1284211@yandex.ru'
     msg['To'] = 'TeSt1284211@yandex.ru'
-    msg['Subject'] = 'Website monitoring'
+    msg['Subject'] = 'Web site monitoring'
     text = f'{args}'
     msg.attach(MIMEText(text, 'plain'))
     server = smtplib.SMTP_SSL('smtp.yandex.ru', 465)
@@ -40,7 +40,7 @@ def dispatcher(loop, pool, crontab):
       
 #список сайтов и их интервалы
 def get_crontab():
-    print('Website monitoring')
+    print('Web site monitoring')
     print('Каждый сайт(интервал) вводите через пробел')
     vvod = input('Введите сайты: ')
     times = list(map(int,input('Введите интервалы для каждого сайта(в мин): ').split()))
